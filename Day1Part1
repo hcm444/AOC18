@@ -1,22 +1,20 @@
-#include <iostream>
-#include <fstream>
-#include <iomanip>
+#include <iostream> //for output
+#include <fstream> //for reading
 using namespace std;
-ifstream infile;
-int main()
-{
-    int num[1014];
-    int sum;
-    int j;
-    
-    infile.open("/home/bot/Desktop/data.txt");
-    infile >> num[j];
-    for (j = 0; j < 1014; j++)
-    {
-        sum += num[j];
-        }
-    infile.close();
-    cout << " SUM = " << sum << endl;
-
-    return 0;
+int main() {
+    int sum = 0; //integer for sum
+    int j; //integer for array 
+    int array[1014]; //array of leength 1014 for lines of integers
+    ifstream reader; //initialize
+    reader.open("data"); //same directory as program
+    if (!reader) { //if can't open terminate
+        cout << "FAILED";
+        exit(1); 
+    }
+    while (reader >> array[j]) { //while reading populate array
+        sum += array[j]; //sum = sum + array compounding sum
+    }
+    reader.close(); //close
+    cout << "Sum = " << sum << endl; //output
+    return 0; //end
 }
