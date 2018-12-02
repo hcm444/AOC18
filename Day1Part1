@@ -1,0 +1,22 @@
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+ifstream infile;
+int main()
+{
+    int num[1014];
+    int sum;
+    int j;
+    
+    infile.open("/home/bot/Desktop/data.txt");
+    infile >> num[j];
+    for (j = 0; j < 1014; j++)
+    {
+        sum += num[j];
+        }
+    infile.close();
+    cout << " SUM = " << sum << endl;
+
+    return 0;
+}
